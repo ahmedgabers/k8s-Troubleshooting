@@ -2,10 +2,10 @@
 
 ## Troubleshooting etcd:
 #### - Check logs: 
-`docker logs etcd
-kubectl logs etcd
-docker exec etcd etcdctl`
-#### - Check /var/lib/etcd
+`docker logs etcd`
+`kubectl logs etcd`
+`docker exec etcd etcdctl`
+#### - Check `/var/lib/etcd`
 #### - Configure loglevel to be DEBUG:
 `curl -XPUT -d '{"Level":"DEBUG"}' --cacert $(docker exec etcd printenv ETCDCTL_CACERT) --cert $(docker exec etcd printenv ETCDCTL_CERT) --key $(docker exec etcd printenv ETCDCTL_KEY) https://localhost:2379/config/local/log`
 
