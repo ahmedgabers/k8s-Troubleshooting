@@ -3,7 +3,9 @@
 ## Troubleshooting etcd:
 #### - Check logs: 
 `docker logs etcd`
+
 `kubectl logs etcd`
+
 `docker exec etcd etcdctl`
 #### - Check `/var/lib/etcd`
 #### - Configure loglevel to be DEBUG:
