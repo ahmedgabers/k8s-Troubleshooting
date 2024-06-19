@@ -1,5 +1,13 @@
 # k8s-Troubleshooting
 
+## Namespace Stuck in Terminating Status
+
+```
+kubectl get namespace "stucked-namespace" -o json \
+  | tr -d "\n" | sed "s/\"finalizers\": \[[^]]\+\]/\"finalizers\": []/" \
+  | kubectl replace --raw /api/v1/namespaces/stucked-namespace/finalize -f -
+```
+
 ## Troubleshooting etcd:
 #### - Check logs: 
 `docker logs etcd`
